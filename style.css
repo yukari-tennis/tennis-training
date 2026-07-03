@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f4f7fb;
+  color: #222;
+}
+
+.app {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.direction {
+  background: white;
+  border-radius: 16px;
+  padding: 36px 10px;
+  margin-bottom: 20px;
+  font-size: 56px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 8px 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.start {
+  background: #24a148;
+}
+
+.stop {
+  background: #da1e28;
+}
+
+.reset {
+  background: #0f62fe;
+}
+
+.settings,
+.stats,
+.home {
+  background: white;
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 14px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+h2 {
+  font-size: 20px;
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  margin: 14px 0;
+  font-weight: bold;
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  font-size: 18px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.stat-item {
+  background: #eef3ff;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.stat-label {
+  font-weight: bold;
+}
+
+.stat-count {
+  font-size: 24px;
+}

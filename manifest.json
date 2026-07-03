@@ -1,0 +1,9 @@
+{
+  "name": "テニス練習アプリ",
+  "short_name": "テニス練習",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f4f7fb",
+  "theme_color": "#24a148",
+  "icons": []
+}

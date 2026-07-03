@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>テニス練習アプリ</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <main class="app">
+    <h1>🎾 テニス練習アプリ</h1>
+    <p class="subtitle">6方向をランダムに指示します</p>
+
+    <div id="direction" class="direction">待機中</div>
+
+    <button id="startBtn" class="btn start">▶ 開始</button>
+    <button id="stopBtn" class="btn stop">■ 停止</button>
+    <button id="resetBtn" class="btn reset">↻ リセット</button>
+
+    <section class="settings">
+      <h2>設定</h2>
+
+      <label>
+        指示間隔
+        <select id="intervalSelect">
+          <option value="800">0.8秒</option>
+          <option value="1000">1.0秒</option>
+          <option value="1500" selected>1.5秒</option>
+          <option value="2000">2.0秒</option>
+          <option value="3000">3.0秒</option>
+        </select>
+      </label>
+
+      <label>
+        音声
+        <select id="voiceSelect">
+          <option value="on" selected>あり</option>
+          <option value="off">なし</option>
+        </select>
+      </label>
+    </section>
+
+    <section class="stats">
+      <h2>統計</h2>
+      <div id="statsArea" class="stats-grid"></div>
+    </section>
+
+    <section class="home">
+      <h2>ホーム画面に追加</h2>
+      <p>スマホではブラウザの共有ボタンから「ホーム画面に追加」を選ぶと、アプリのように使えます。</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
