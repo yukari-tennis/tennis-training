@@ -1,5 +1,14 @@
 const directions = ["右上", "右中", "右下", "左上", "左中", "左下"];
 
+const speechText = {
+  "右上": "右上",
+  "右中": "右なか",
+  "右下": "右下",
+  "左上": "左上",
+  "左中": "左なか",
+  "左下": "左下"
+};
+
 let timer = null;
 let lastDirection = null;
 let recentDirections = [];
@@ -59,7 +68,7 @@ function showDirection() {
 
   stats[direction]++;
   updateStats();
-  speak(direction);
+  speak(speechText[direction]);
 }
 
 function start() {
