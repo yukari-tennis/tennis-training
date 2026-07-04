@@ -10,6 +10,7 @@ const speechText = {
 };
 
 let timer = null;
+let wakeLock = null;
 let lastDirection = null;
 let recentDirections = [];
 let stats = {};
@@ -71,8 +72,36 @@ function showDirection() {
   speak(speechText[direction]);
 }
 
+async function keepScreenAwake() {
+  if (!("wakeLock" in navigator)) {
+    console.log("この端末では画面ロック防止に対応していません");
+    return;
+  }
+
+  try {
+    wakeLock = await navigator.wakeLock.request("screen");
+    console.log("画面ロック防止を開始しました");
+  } catch (error) {
+    console.log("画面ロック防止に失敗しました", error);
+  }
+}
+
+async function releaseScreenAwake() {
+  if (wakeLock) {
+    try {
+      await wakeLock.release();
+      wakeLock = null;
+      console.log("画面ロック防止を解除しました");
+    } catch (error) {
+      console.log("画面ロック防止の解除に失敗しました", error);
+    }
+  }
+}
+
 function start() {
   if (timer) return;
+
+  keepScreenAwake();
 
   showDirection();
 
@@ -84,6 +113,7 @@ function stop() {
   clearInterval(timer);
   timer = null;
   speechSynthesis.cancel();
+  releaseScreenAwake();
 }
 
 function reset() {
